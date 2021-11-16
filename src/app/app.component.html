@@ -1,3 +1,18 @@
-<app-mural-avisos></app-mural-avisos>
 
-<router-outlet></router-outlet>
+<div>
+    <nav class="navbar navbar-expand navbar-dark bg-dark">
+      <a href="#" class="navbar-brand text-muted ms-2" >Trummer</a>
+      <div class="navbar-nav mr-auto">
+        <li class="nav-item ms-5 ">
+          <a href="#" class="nav-link text-white">Warnings</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="add-warning" class="nav-link text-white">Add</a>
+        </li>
+      </div>
+    </nav>
+  
+    <div class="container mt-3">
+      <router-outlet></router-outlet>
+    </div>
+  </div>

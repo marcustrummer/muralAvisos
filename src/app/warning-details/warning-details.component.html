@@ -1,0 +1,75 @@
+<div>
+    <div *ngIf="currentWarning.id" class="edit-form">
+      <h4>Warning</h4>
+      <form>
+        <div class="form-group">
+          <label for="title">Title</label>
+          <input
+            type="text"
+            class="form-control"
+            id="title"
+            [(ngModel)]="currentWarning.title"
+            name="title"
+          />
+        </div>
+        <div class="form-group">
+          <label for="description">Description</label>
+          <input
+            type="text"
+            class="form-control"
+            id="description"
+            [(ngModel)]="currentWarning.description"
+            name="description"
+          />
+        </div>
+        <!--div class="form-group">
+          <label for="description">dateViewed</label>
+          <input
+            type="date"
+            class="form-control"
+            id="description"
+            name="description"
+            [ngModel] ="dateArrival | date:'yyyy-MM-dd'" (ngModelChange)="dateArrival = $event"
+          />
+        </div!-->
+  
+        <div class="form-group">
+          <label><strong>Status:</strong></label>
+          {{ currentWarning.published ? "Published" : "Pending" }}
+        </div>
+      </form>
+  
+      <button
+        class="btn btn-info me-2"
+        *ngIf="currentWarning.published"
+        (click)="updatePublished(false)"
+      >
+        UnPublish
+      </button>
+      <button
+        *ngIf="!currentWarning.published"
+        class="btn btn-info me-2"
+        (click)="updatePublished(true)"
+      >
+        Publish
+      </button>
+  
+      <button class="btn btn-danger me-2" (click)="deleteWarning()">
+        Delete
+      </button>
+  
+      <button
+        type="submit"
+        class="btn btn-success me-2"
+        (click)="updateWarning()"
+      >
+        Update
+      </button>
+      <p>{{ message }}</p>
+    </div>
+  
+    <div *ngIf="!currentWarning.id">
+      <br />
+      <p>Cannot access this Warning...</p>
+    </div>
+  </div>

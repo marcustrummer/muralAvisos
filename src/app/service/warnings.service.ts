@@ -3,6 +3,9 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Warning } from '../model/Warning';
 
+const baseUrl = 'http://localhost:8080/warnings';
+
+
 @Injectable({
   providedIn: 'root',
 })
@@ -10,23 +13,20 @@ export class WarningsService {
   constructor(private http: HttpClient) {}
 
   /*CREATE*/
-  postWarning(Warning: Warning): Observable<Warning> {
-    return this.http.post<Warning>(
-      'https://receitasdomarquito.herokuapp.com/warnings',
-      Warning
-    );
+  postWarning(data:any): Observable<any> {
+    return this.http.post(baseUrl, data);
   }
 
 
   /*READ*/
-  getAllWarnings(): Observable<Warning[]> {
-    return this.http.get<Warning[]>(
-      'https://receitasdomarquito.herokuapp.com/warnings/all'
-    );
+  getAllWarnings(params:any): Observable<any> {
+    return this.http.get<any>(
+     `${baseUrl}/warnings`
+    , { params });
   }
-  getByWarningById(id: number): Observable<Warning> {
+  getWarningById(id: any): Observable<Warning> {
     return this.http.get<Warning>(
-      `https://receitasdomarquito.herokuapp.com/warnings/${id}`
+      `${baseUrl}/${id}`
     );
   }
   getByTitleWarning(title: string): Observable<Warning[]> {
@@ -35,22 +35,31 @@ export class WarningsService {
     );
   }
 
+  findByTitle(title: any): Observable<Warning[]> {
+    return this.http.get<Warning[]>(`${baseUrl}?title=${title}`);
+  }
+
 
 
   /*UPDATE*/
-  putWarning(Warning: Warning): Observable<Warning> {
-    return this.http.put<Warning>(
-      'https://receitasdomarquito.herokuapp.com/warnings',
-      Warning
+  putWarning(id:any, data:any): Observable<any> {
+    return this.http.put(
+      `${baseUrl}/${id}`,
+      data
     );
   }
 
 
   
   /*DELETE*/
-  deleteWarning(id: number) {
+  deleteWarning(id: any) {
     return this.http.delete(
-      `https://receitasdomarquito.herokuapp.com/warnings/${id}`
+      `${baseUrl}/${id}`
     );
   }
+ 
+    deleteAll(): Observable<any> {
+    return this.http.delete(baseUrl);
+  }
+  
 }
