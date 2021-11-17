@@ -12,7 +12,6 @@
             class="btn btn-outline-secondary"
             type="button"
             (click)="searchTitle()"
-            (click)="getDateClick()"
           >
             Search
           </button>
@@ -59,15 +58,12 @@
           {{ currentWarning.postDate | date: "HH:mm" }} 
         </div>
         <div>
-          <label><strong>viewed at:</strong></label>
+          <label><strong>Viewed at:</strong></label>
           {{ currentWarning.viewedDate | date: "dd/MM/yyyy" }} 
           {{ currentWarning.viewedDate | date: "HH:mm" }} 
           
         </div>
-        <div>
-          <label><strong>Status:</strong></label>
-          {{ currentWarning.published ? "Published" : "Pending" }}
-        </div>
+
         
   
         

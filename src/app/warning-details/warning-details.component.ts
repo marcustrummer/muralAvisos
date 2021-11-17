@@ -58,7 +58,7 @@ export class WarningDetailsComponent implements OnInit {
         console.log(response);
         this.message = response.message
           ? response.message
-          : 'The status was updated successfully!';
+          : 'Message marked as read successfully!';
       },
       (error) => {
         console.log(error);

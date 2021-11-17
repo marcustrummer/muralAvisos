@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Warning } from '../model/Warning';
 import { WarningsService } from '../service/warnings.service';
-import { DatePipe } from '@angular/common'
 
 @Component({
   selector: 'app-mural-avisos',
@@ -101,11 +100,5 @@ export class MuralAvisosComponent implements OnInit {
   searchTitle(): void {
     this.page = 1;
     this.retrieveWarnings();
-  }
-
-  getDateClick(){
-    this.date = new Date();
-    let latest_date = this.datepipe.transform(this.date, 'yyyy-MM-dd');
-    console.log(latest_date);
   }
 }

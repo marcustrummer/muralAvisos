@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Warning } from '../model/Warning';
 
-const baseUrl = 'http://localhost:8080/warnings';
+const baseUrl = 'https://muraldeavisostrummer.herokuapp.com/warnings';
 
 
 @Injectable({
@@ -59,7 +59,7 @@ export class WarningsService {
   }
  
     deleteAll(): Observable<any> {
-    return this.http.delete(baseUrl);
+    return this.http.delete(`${baseUrl}/warnings/all`);
   }
   
 }
