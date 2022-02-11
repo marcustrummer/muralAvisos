@@ -13,9 +13,10 @@ import { FormsModule } from '@angular/forms';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { AddWarningsComponent } from './add-warnings/add-warnings.component';
 import { WarningDetailsComponent } from './warning-details/warning-details.component';
+import { AlertasComponent } from './alertas/alertas.component';
 
 @NgModule({
-  declarations: [AppComponent, MuralAvisosComponent, AddWarningsComponent, WarningDetailsComponent],
+  declarations: [AppComponent, MuralAvisosComponent, AddWarningsComponent, WarningDetailsComponent, AlertasComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

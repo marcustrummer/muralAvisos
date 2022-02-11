@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Warning } from '../model/Warning';
+import { AlertsPopupsService } from '../service/alerts-popups.service';
 import { WarningsService } from '../service/warnings.service';
 
 @Component({
@@ -22,11 +23,13 @@ export class MuralAvisosComponent implements OnInit {
   datepipe: any;
 
   constructor(
-    private warningService: WarningsService
+    private warningService: WarningsService,
+    private alertService: AlertsPopupsService
   ) { }
 
   ngOnInit(){
     this.retrieveWarnings();
+    this.alertService.showAlertInfo('Se esse é o seu primeiro acesso os dados podem demorar a carregar um pouquinho...');
   }
 
   getRequestParams(searchTitle: string, page: number, pageSize: number): any {
