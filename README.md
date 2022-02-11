@@ -1,27 +1,15 @@
-# MuralAvisos
+# BlogTrummer
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.7.
+<h2>Olá, esse projeto foi feito para um processo seletivo, foi muito divertido desenvolvê-lo então decidi deixar disponível aqui para vocês :)
 
-## Development server
+  
+  
+  <br/>O backend encontra-se nesse repositório:
+  <br/>https://github.com/marcustrummer/noticeBoard---BackEnd
+  <h2/>
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+<h3>Abaixo segue um protótipo de como ficou a landing page.
+  E se você tem interesse em testar eu adoraria ouvir feedbacks no que pode ser implementado e o que pode não estar funcionando legal..<h3/>
+<img class="d-flex justify-content-center" align="center" alt="Artur-Android" height="469" width=" 950" src="https://github.com/marcustrummer/muralAvisos/blob/main/src/assets/muralAvisosLandingPage.png" >
+  
+<h3>Link: https://muraldeavisostrummer.netlify.app/#/mural-avisos</h3>
